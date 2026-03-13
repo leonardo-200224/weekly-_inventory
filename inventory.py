@@ -1,4 +1,5 @@
 
+#validations
 def sale():
     # name validation
     counter_name=1
@@ -49,7 +50,4 @@ def sale():
     }
     
     return sales
-
-venta=sale()
-print(venta)
         

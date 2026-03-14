@@ -54,20 +54,3 @@ Product: Pencil
 Price: 500
 Quantity: 3
 Total cost: 1500
-
-
-## Learning Objectives
-
-This exercise demonstrates:
-
-- Basic Python input handling
-- Conditional validation
-- Loops
-- Dictionaries
-- Lists
-- Mathematical operations
-
-## Author
-
-Leonardo Iván Ayala Pérez  
-Systems Engineering Student

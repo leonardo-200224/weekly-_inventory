@@ -1,3 +1,5 @@
+import math
+all_sales = []
 #validations
 def sale():
     # name validation
@@ -31,14 +33,14 @@ def sale():
         try:
             quantity = int(input("enter product quantity: "))
             if quantity <=0:
-                 print("ERRO: Enter a valid value")
-                 continue
+                print("ERRO: Enter a valid value")
+                continue
             break
         except ValueError:
             print("Enter a valid value")
             continue
 
-    
+    #data storage library
     sales ={ 
         "product"   : name,
         "price"     :price,
@@ -48,5 +50,13 @@ def sale():
     }
     
     return sales
-        
-print(sale())
+    
+# Mostrar resultados en consola
+all_sales.append(sale())
+print("\nResult\n")
+print(
+    f"Product: {all_sales[0]['product']}\n"
+    f"price: {math.trunc(all_sales[0]['price'])}\n"
+    f"Quantity: {all_sales[0]['quantity']}\n"
+    f"Total cost: {math.trunc(all_sales[0]['total_cost'])}\n"
+        )

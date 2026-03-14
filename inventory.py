@@ -40,12 +40,13 @@ def sale():
 
     
     sales ={ 
-        "product" : name,
-        "price"   :price,
-        "quantity": quantity
+        "product"   : name,
+        "price"     :price,
+        "quantity"  : quantity,
+        "total_cost":price * quantity
         
     }
     
     return sales
         
-sale()
+print(sale())

@@ -1,12 +1,12 @@
 import math
-all_sales = []
+
 #validations
 def sale():
     # name validation
     counter_name=1
     while counter_name ==1:
             # Request user data
-            name = str(input("enter product name: "))
+            name = str(input("enter product name: ")).strip()
             if not name.isalpha():
                 print("Symbols and Numbers are not allowed")
                 continue
@@ -53,33 +53,3 @@ def sale():
     }
     
     return sales
-
-# Mostrar resultados en consola
-all_sales.append(sale())
-print("\nResult\n")
-print(
-    f"Product: {all_sales[0]['product']}\n"
-    f"price: {math.trunc(all_sales[0]['price'])}\n"
-    f"Quantity: {all_sales[0]['quantity']}\n"
-    f"Total cost: {math.trunc(all_sales[0]['total_cost'])}\n"
-        )
-
-        
-# ---------------------------------------------------------
-# General program description
-# This program allows the user to register a product in a
-# simple inventory system. The user must enter the product
-# name, price and quantity.
-#
-# The program validates the input data to ensure that:
-# - The product name only contains letters.
-# - The price is a positive number.
-# - The quantity is a positive integer.
-#
-# After validating the data, the program calculates the
-# total cost of the product (price * quantity) and stores
-# the information in a dictionary inside a list.
-#
-# Finally, the program displays the product information
-# and the calculated total cost in the console.
-# ---------------------------------------------------------

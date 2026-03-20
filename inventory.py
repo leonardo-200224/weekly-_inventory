@@ -1,6 +1,6 @@
 import math
 
-#validations
+# validations
 def sale():
     # name validation
     counter_name=1
@@ -43,7 +43,7 @@ def sale():
             print("Enter a valid value")
             continue
 
-    #data storage library
+    # data storage library
     sales ={ 
         "product"   : name,
         "price"     :price,
@@ -51,5 +51,5 @@ def sale():
         "total_cost":price * quantity
         
     }
-    
+    # the created dictionary is returned
     return sales

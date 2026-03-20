@@ -1,10 +1,15 @@
+#importing functions
 from inventory import sale
 from summary import summary
+from Calculate import calculate
 
+#list that stores the dictionaries
 all_sales=[]
 
+#loop for menu validations
 cont =1
 while cont ==1:
+    #menu creation and validation
     try:
         print("\nMENU")
         number= int(input(
@@ -14,6 +19,8 @@ while cont ==1:
             "4-go out\n"
             "Enter product number (1-4): "
         ))
+        
+        #Conditional statements validating the user's input
         if number<=0:
             print("You must enter a valid product (1-4)")
             continue
@@ -24,17 +31,18 @@ while cont ==1:
             
         elif number ==2:
             summary(all_sales)
-            
             continue
+        
         elif number ==3:
-            print("calculate")
+            calculate(all_sales)
             continue
+        
         elif number ==4:
             cont =2
         else:
             print("You must enter a valid value (1-4)") 
             continue  
-        
+    #The error is detected and an error message is displayed.
     except ValueError:
         print("the value must be numeric (1-4)")
         continue

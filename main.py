@@ -4,6 +4,7 @@ from summary import summary
 from Calculate import calculate
 from inventory import buscar_producto
 from inventory import actualizar_producto
+from inventory import eliminar_producto 
 
 #list that stores the dictionaries
 all_sales=[]
@@ -21,7 +22,9 @@ while cont ==1:
             "4-actualizar producto\n"
             "5-eliminar producto\n"
             "6-calculate statistics\n"
-            "7-go out\n"
+            "7-Guardar CSV\n"
+            "8-Cargar CSV\n"
+            "9-go out\n"
             "Enter product number (1-4): "
         ))
         
@@ -49,16 +52,30 @@ while cont ==1:
             actualizar_producto(all_sales)
             continue
         
+        # Eliminar producto
+        elif number ==5:
+            eliminar_producto(all_sales)
+            continue
+        
         # calculo de estadistica
         elif number ==6:
             calculate(all_sales)
             continue
         
+        # cGuardar CSV
         elif number ==7:
+            continue
+        
+        # Cargar CSV
+        elif number ==8:
+            continue
+        
+        elif number ==9:
             cont =2
         else:
             print("You must enter a valid value (1-4)") 
             continue  
+        
     #The error is detected and an error message is displayed.
     except ValueError:
         print("the value must be numeric (1-4)")

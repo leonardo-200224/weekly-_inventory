@@ -1,47 +1,16 @@
+from validaciones import *
 import math
 
 # validations
 def sale():
     # name validation
-    counter_name=1
-    while counter_name ==1:
-            # Request user data
-            name = str(input("enter product name: ")).strip()
-            if not name.isalpha():
-                print("Symbols and Numbers are not allowed")
-                continue
-            
-            counter_name +=2
+    name = validacion_str("enter product name")
     
     # price validation
-    counter_price=1
-    while counter_price ==1:        
-        try:
-            # Request user data
-            price = float(input("enter product price: "))
-            if price <=0:
-                print("ERRO: Enter a valid value")
-                continue
+    price= validacion_float("enter product price")
         
-            break
-        except ValueError:
-            print("Enter a valid value")
-            continue
-        
-
     # quantity validation
-    counter_quantity=1
-    while counter_quantity ==1:  
-        try:
-            # Request user data
-            quantity = int(input("enter product quantity: "))
-            if quantity <=0:
-                print("ERRO: Enter a valid value")
-                continue
-            break
-        except ValueError:
-            print("Enter a valid value")
-            continue
+    quantity= validacion_int("enter product quantit")
 
     # data storage library
     sales ={ 
@@ -59,16 +28,8 @@ def sale():
 def buscar_producto(inventario):
     
     # name validation
-    counter_name=1
-    while counter_name ==1:
-            # Request user data
-            name = str(input("enter product name: ")).strip()
-            if not name.isalpha():
-                print("Symbols and Numbers are not allowed")
-                continue
-            
-            counter_name +=2
-            
+    name= validacion_str("enter product name")
+    
     for dictionary in inventario:
         if dictionary["product"] == name:
             print(f"product: {dictionary["product"]} | " 
@@ -77,20 +38,13 @@ def buscar_producto(inventario):
             
     return None    
 
+# actualizar producto
 def actualizar_producto(inventario):
  
  # name validation
-    counter_name=1
-    while counter_name ==1:
-            # Request user data
-            name_update = str(input("Enter product name to update : ")).strip()
-            if not name_update.isalpha():
-                print("Symbols and Numbers are not allowed")
-                continue
+    name_update= validacion_str("Enter product name to update")
             
-            counter_name +=2
-            
-    # mostrar producto
+    # Buscar producto
     for dictionary in inventario:
         cont=1
         if dictionary["product"] == name_update:
@@ -112,19 +66,7 @@ def actualizar_producto(inventario):
                     if number ==1:
                         
                         # price validation
-                        counter_price=1
-                        while counter_price ==1:        
-                            try:
-                                # Request user data
-                                price_new = float(input("enter new product price: "))
-                                if price_new <=0:
-                                    print("ERRO: Enter a valid value")
-                                    continue
-                            
-                                break
-                            except ValueError:
-                                print("Enter a valid value")
-                                continue
+                        price_new= validacion_float("enter new product price")
                         dictionary["price"] = price_new
     
                     
@@ -132,18 +74,7 @@ def actualizar_producto(inventario):
                     elif number ==2:
                         
                         # quantity validation
-                        counter_quantity=1
-                        while counter_quantity ==1:  
-                            try:
-                                # Request user data
-                                quantity_new = int(input("enter new product quantity: "))
-                                if quantity_new <=0:
-                                    print("ERRO: Enter a valid value")
-                                    continue
-                                break
-                            except ValueError:
-                                print("Enter a valid value")
-                                continue
+                        quantity_new = validacion_float("enter new product quantity")
                         dictionary["quantity"] = quantity_new
                 
                     else:
@@ -156,4 +87,22 @@ def actualizar_producto(inventario):
                 break
     
     if cont == 1:
-        print("Producto no encontrado")
+        print("\nProducto no encontrado\n")
+    
+    
+def eliminar_producto(inventario):
+     # name validation
+    name_delete = validacion_str("Enter product name to delete")
+            
+     # Buscar producto
+    for dictionary in inventario:
+        cont=1
+        if dictionary["product"] == name_delete:
+                cont=2
+                inventario.remove(dictionary)
+                print("\nProducto Eliminado\n")
+                break
+                
+    
+    if cont == 1:
+        print("\nProducto no encontrado\n")

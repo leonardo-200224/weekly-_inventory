@@ -68,14 +68,14 @@ This project is a console-based inventory system that allows you to manage produ
 ---
 
 ## 🧱 Project Structure
-main.py # Main menu and program flow
-inventory.py # CRUD operations
-calculate.py # Statistics
-summary.py # Display inventory
-validations.py # Input validation
-files.py # CSV handling
-flow_chart/ # Flowcharts (week 1 and week 3)
-README.md # Documentation
+* main.py # Main menu and program flow
+* inventory.py # CRUD operations
+* calculate.py # Statistics
+* summary.py # Display inventory
+* validations.py # Input validation
+* files.py # CSV handlin
+* flow_chart/ # Flowcharts (week 1 and week 3)
+* README.md # Documentation
 
 ## Author
 

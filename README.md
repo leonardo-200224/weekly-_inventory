@@ -1,4 +1,6 @@
 # Weekly Inventory
+![Final (1)](https://github.com/user-attachments/assets/0a9e201d-ff56-428f-9ee0-77e54658bbca)
+
 
 # Inventory Management System
 

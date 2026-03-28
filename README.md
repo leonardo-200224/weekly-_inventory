@@ -8,14 +8,14 @@ A command-line interface (CLI)-based inventory management system developed in Py
 
 --
 
-## 📌 Project Overview
+##  Project Overview
 
 This project is a console-based inventory system that allows you to manage products, calculate statistics, and save/load data using CSV files.
 
 
 ---
 
-## 🚀 Features
+##  Features
 
 ### Week 1
 
@@ -69,7 +69,7 @@ This project is a console-based inventory system that allows you to manage produ
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 * main.py # Main menu and program flow
 * inventory.py # CRUD operations
 * calculate.py # Statistics

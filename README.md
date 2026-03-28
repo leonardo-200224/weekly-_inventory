@@ -1,56 +1,83 @@
-# Weekly Inventory - M1S1
+# Weekly Inventory
 
-## Description
+# Inventory Management System
 
-This project is part of the **User Story M1S1: Fundamentals and Basic Inventory Operations**.
+A command-line interface (CLI)-based inventory management system developed in Python as part of a learning process. The system evolves weekly, incorporating new features and improving its structure.
 
-The objective of this program is to register a product in a simple inventory system using Python fundamentals such as:
+--
 
-- User input
-- Variables
-- Data validation
-- Mathematical operations
-- Console output
+## 📌 Project Overview
 
-## Features
-
-The program allows the user to:
-
-- Enter a product name
-- Enter a product price
-- Enter a product quantity
-- Validate the input values
-- Calculate the total cost of the product
-- Display the result in the console
-
-## Technologies Used
-
-- Python 3
-
-## Program Flow
-
-1. The program asks the user for:
-   - Product name
-   - Product price
-   - Product quantity
-
-2. The system validates the inputs:
-   - Product name must contain only letters.
-   - Price must be a positive number.
-   - Quantity must be a positive integer.
-
-3. The total cost is calculated:
-
-total_cost = price * quantity
-
-4. The program prints the result in the console.
-
-Example output:
+This project is a console-based inventory system that allows you to manage products, calculate statistics, and save/load data using CSV files.
 
 
-Result
+---
 
-Product: Pencil
-Price: 500
-Quantity: 3
-Total cost: 1500
+## 🚀 Features
+
+### Week 1
+
+* Register a product (name, price, quantity)
+* Calculate the total cost (price * quantity)
+* Input validation (string, decimal, integer)
+* Display results in the console
+
+### Week 2
+
+* Interactive menu with `while` loop
+* Add multiple products
+* Store data with lists and dictionaries
+* Display inventory
+* Calculate basic statistics (total units and total value)
+
+### Week 3
+
+* Complete CRUD system:
+
+* Add product
+
+* Display inventory
+
+* Search for product
+
+* Update product
+
+* Delete product
+
+* Advanced statistics:
+
+* Total units
+
+* Total value
+
+* Most expensive product
+* Product with the highest stock
+
+* CSV persistence:
+
+* Save inventory to a file
+
+* Load inventory from a file
+
+* Option to overwrite or merge data
+
+* Error handling with loops `try/except`
+* Input validation to prevent errors
+* Modular code structure
+
+---
+
+## 🧱 Project Structure
+main.py # Main menu and program flow
+inventory.py # CRUD operations
+calculate.py # Statistics
+summary.py # Display inventory
+validations.py # Input validation
+files.py # CSV handling
+flow_chart/ # Flowcharts (week 1 and week 3)
+README.md # Documentation
+
+## Author
+
+Leonardo Iván Ayala Pérez
+Python Learning Project

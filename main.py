@@ -5,6 +5,7 @@ from Calculate import calculate
 from inventory import buscar_producto
 from inventory import actualizar_producto
 from inventory import eliminar_producto 
+from archivos import guardar_csv, cargar_csv
 
 #list that stores the dictionaries
 all_sales=[]
@@ -24,7 +25,7 @@ while cont ==1:
             "6-calculate statistics\n"
             "7-Guardar CSV\n"
             "8-Cargar CSV\n"
-            "9-go out\n"
+            "9-Exit\n"
             "Enter product number (1-4): "
         ))
         
@@ -64,10 +65,40 @@ while cont ==1:
         
         # cGuardar CSV
         elif number ==7:
+            ruta = input("Ingrese ruta del archivo (ej: inventario.csv): ")
+            guardar_csv(all_sales, ruta)
             continue
         
         # Cargar CSV
         elif number ==8:
+            ruta = input("Ingrese ruta del archivo: ")
+            nuevos_datos = cargar_csv(ruta)
+
+            if nuevos_datos:
+                opcion = input("¿Sobrescribir inventario actual? (si/no): ").upper()
+
+                if opcion == "SI":
+                    all_sales = nuevos_datos
+                    print("\n Inventario reemplazado\n")
+
+                elif opcion == "NO":
+                    # fusionar
+                    for nuevo in nuevos_datos:
+                        encontrado = False
+
+                        for actual in all_sales:
+                            if actual["product"] == nuevo["product"]:
+                                actual["quantity"] += nuevo["quantity"]
+                                actual["price"] = nuevo["price"]
+                                actual["total_cost"] = actual["price"] * actual["quantity"]
+                                encontrado = True
+                                break
+
+                        if not encontrado:
+                            all_sales.append(nuevo)
+
+                    print("\n Inventario fusionado\n")
+
             continue
         
         elif number ==9:
@@ -80,25 +111,3 @@ while cont ==1:
     except ValueError:
         print("the value must be numeric (1-4)")
         continue
-
-
-
-        
-# ---------------------------------------------------------
-# General program description
-# This program allows the user to register a product in a
-# simple inventory system. The user must enter the product
-# name, price and quantity.
-#
-# The program validates the input data to ensure that:
-# - The product name only contains letters.
-# - The price is a positive number.
-# - The quantity is a positive integer.
-#
-# After validating the data, the program calculates the
-# total cost of the product (price * quantity) and stores
-# the information in a dictionary inside a list.
-#
-# Finally, the program displays the product information
-# and the calculated total cost in the console.
-# ---------------------------------------------------------

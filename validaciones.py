@@ -15,7 +15,7 @@ def validacion_str(mensaje):
     
     
 # int 
-def validacion_int(mensaje):
+def validacion_float(mensaje):
     counter_price=1
     while counter_price ==1:        
         try:
@@ -35,7 +35,7 @@ def validacion_int(mensaje):
     
     
 # float
-def validacion_float(mensaje):
+def validacion_int(mensaje):
 # quantity validation
     counter_quantity=1
     while counter_quantity ==1:  
